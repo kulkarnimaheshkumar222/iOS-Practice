@@ -26,11 +26,7 @@ class OrderViewController: UIViewController {
     
     func getOrderList() {
         
-        guard let url = URL(string: Constant.orderListUrlStr) else {return }
-        
-        let resource = Resource<[OrderModel]>(url: url)
-        
-        WebService().load(resource: resource) { result in
+        WebService().load(resource: OrderModel.all) { result in
             switch result {
             case .success(let orders):
                 self.viewModel.orderListViewModel = orders.map(OrderViewModel.init)
@@ -40,6 +36,13 @@ class OrderViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navContoller = segue.destination as? UINavigationController
+        if let addOrderViewController = navContoller?.viewControllers.first as? AddOrderViewController {
+            addOrderViewController.delegate = self
         }
     }
     
@@ -61,9 +64,24 @@ extension OrderViewController: UITableViewDataSource ,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 50
     }
     
+}
+
+extension OrderViewController: AddCoffeeOrderDelegate {
+    
+    func addCoffeeOrderViewControllerDidSave(order: OrderModel, controller: UIViewController) {
+        DispatchQueue.main.async {
+            controller.dismiss(animated: true, completion: nil)
+            self.viewModel.orderListViewModel.append(OrderViewModel(order: order))
+            self.ordertblView.insertRows(at: [IndexPath.init(row: self.viewModel.orderListViewModel.count-1, section: 0)], with: .automatic)
+        }
+    }
+    
+    func addCoffeeOrderViewControllerDidclose(controller: UIViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 
 
