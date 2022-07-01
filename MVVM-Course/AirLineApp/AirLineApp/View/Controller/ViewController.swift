@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         self.title = "AirLine List"
         viewModel.viewController = self
         registerPassengerTableViewCell()
-        viewModel.getAllPassengers()
+        viewModel.getAllPassengers(pageNo: viewModel.currentPageNo, pageSize: Constant.pageSize)
     }
     
     func registerPassengerTableViewCell() {

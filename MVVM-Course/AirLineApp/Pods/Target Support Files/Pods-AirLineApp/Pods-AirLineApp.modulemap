@@ -1,0 +1,6 @@
+framework module Pods_AirLineApp {
+  umbrella header "Pods-AirLineApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

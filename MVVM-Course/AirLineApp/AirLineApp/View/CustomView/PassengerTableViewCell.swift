@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PassengerTableViewCell: UITableViewCell {
     
@@ -37,7 +38,7 @@ class PassengerTableViewCell: UITableViewCell {
         self.airLineNameLbl.text = model.name
         self.airLineSloganLbl.text = model.slogan
         self.airLineHeadQuatersLbl.text = model.head_quaters
-        self.airlineLogoImg.load(url: URL(string: model.logo)!)
+        self.airlineLogoImg.sd_setImage(with: URL(string: model.logo), placeholderImage:  UIImage(named: "placeholder.png"))
     }
     
 }

@@ -10,5 +10,5 @@ import Foundation
 struct Constant {
     
     static let getAllPassengerUrlStr = "https://api.instantwebtools.net/v1/passenger?page=0&size=10"
-    
+    static let pageSize:Int = 10
 }

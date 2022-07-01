@@ -19,6 +19,7 @@
 		1DCED691286E092A00E19207 /* AllPassengerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCED690286E092A00E19207 /* AllPassengerViewModel.swift */; };
 		1DCED694286E0D4A00E19207 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCED692286E0D4A00E19207 /* PassengerTableViewCell.swift */; };
 		1DCED695286E0D4A00E19207 /* PassengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCED693286E0D4A00E19207 /* PassengerTableViewCell.xib */; };
+		C81E528EA1670BEB70E945D8 /* Pods_AirLineApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADF057942B51929EBB02740 /* Pods_AirLineApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		1DCED690286E092A00E19207 /* AllPassengerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPassengerViewModel.swift; sourceTree = "<group>"; };
 		1DCED692286E0D4A00E19207 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		1DCED693286E0D4A00E19207 /* PassengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassengerTableViewCell.xib; sourceTree = "<group>"; };
+		528BE542BB798A992AC2EA73 /* Pods-AirLineApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirLineApp.debug.xcconfig"; path = "Target Support Files/Pods-AirLineApp/Pods-AirLineApp.debug.xcconfig"; sourceTree = "<group>"; };
+		838791D161CDADC42841FBD2 /* Pods-AirLineApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirLineApp.release.xcconfig"; path = "Target Support Files/Pods-AirLineApp/Pods-AirLineApp.release.xcconfig"; sourceTree = "<group>"; };
+		AADF057942B51929EBB02740 /* Pods_AirLineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirLineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81E528EA1670BEB70E945D8 /* Pods_AirLineApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,8 @@
 			children = (
 				1DB6EE7F286A1435002D5AA9 /* AirLineApp */,
 				1DB6EE7E286A1435002D5AA9 /* Products */,
+				E5A35079DC6DF9FE76747A08 /* Pods */,
+				3F4660EE24675B2492DFA457 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +140,24 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		3F4660EE24675B2492DFA457 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AADF057942B51929EBB02740 /* Pods_AirLineApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5A35079DC6DF9FE76747A08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				528BE542BB798A992AC2EA73 /* Pods-AirLineApp.debug.xcconfig */,
+				838791D161CDADC42841FBD2 /* Pods-AirLineApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DB6EE91286A1436002D5AA9 /* Build configuration list for PBXNativeTarget "AirLineApp" */;
 			buildPhases = (
+				582813AD0061DF28E839735F /* [CP] Check Pods Manifest.lock */,
 				1DB6EE79286A1435002D5AA9 /* Sources */,
 				1DB6EE7A286A1435002D5AA9 /* Frameworks */,
 				1DB6EE7B286A1435002D5AA9 /* Resources */,
+				A6A63757EC3B77A30E7E5B64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +226,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		582813AD0061DF28E839735F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirLineApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A63757EC3B77A30E7E5B64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AirLineApp/Pods-AirLineApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AirLineApp/Pods-AirLineApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AirLineApp/Pods-AirLineApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DB6EE79286A1435002D5AA9 /* Sources */ = {
@@ -354,6 +423,7 @@
 		};
 		1DB6EE92286A1436002D5AA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 528BE542BB798A992AC2EA73 /* Pods-AirLineApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,6 +451,7 @@
 		};
 		1DB6EE93286A1436002D5AA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838791D161CDADC42841FBD2 /* Pods-AirLineApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -12,9 +12,11 @@ class AllPassengerViewModel {
     var passengerModelArray = [PassengerModel]()
     var airLineModelArray = [AirLineModel]()
     weak var viewController:ViewController?
+    var currentPageNo = 0
     
-    func getAllPassengers()  {
-        guard let url = URL(string: Constant.getAllPassengerUrlStr) else { return }
+    func getAllPassengers(pageNo:Int,pageSize:Int)  {
+        let getAllPassengerUrlStr = "https://api.instantwebtools.net/v1/passenger?page=\(pageNo)&size=\(pageSize)"
+        guard let url = URL(string: getAllPassengerUrlStr) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
