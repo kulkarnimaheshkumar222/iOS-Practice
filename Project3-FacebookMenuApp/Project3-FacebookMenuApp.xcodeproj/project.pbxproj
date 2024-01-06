@@ -13,6 +13,10 @@
 		1DAE0CC72B3DF350008812D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAE0CC52B3DF350008812D5 /* Main.storyboard */; };
 		1DAE0CC92B3DF351008812D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAE0CC82B3DF351008812D5 /* Assets.xcassets */; };
 		1DAE0CCC2B3DF351008812D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAE0CCA2B3DF351008812D5 /* LaunchScreen.storyboard */; };
+		1DB69E0B2B49CE6000A344BD /* MenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB69E092B49CE6000A344BD /* MenuHeaderCell.swift */; };
+		1DB69E0C2B49CE6000A344BD /* MenuHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB69E0A2B49CE6000A344BD /* MenuHeaderCell.xib */; };
+		1DB69E0F2B49D57000A344BD /* FbMenuViewController+CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB69E0E2B49D57000A344BD /* FbMenuViewController+CellType.swift */; };
+		1DB69E122B49D5C000A344BD /* FbMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB69E112B49D5C000A344BD /* FbMenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1DAE0CC82B3DF351008812D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DAE0CCB2B3DF351008812D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DAE0CCD2B3DF351008812D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB69E092B49CE6000A344BD /* MenuHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCell.swift; sourceTree = "<group>"; };
+		1DB69E0A2B49CE6000A344BD /* MenuHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderCell.xib; sourceTree = "<group>"; };
+		1DB69E0E2B49D57000A344BD /* FbMenuViewController+CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FbMenuViewController+CellType.swift"; path = "Project3-FacebookMenuApp/Controller/FbMenuViewController+CellType.swift"; sourceTree = SOURCE_ROOT; };
+		1DB69E112B49D5C000A344BD /* FbMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbMenuViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,9 @@
 		1DAE0CBE2B3DF350008812D5 /* Project3-FacebookMenuApp */ = {
 			isa = PBXGroup;
 			children = (
+				1DB69E102B49D5AD00A344BD /* ViewModel */,
+				1DB69E0D2B49D54800A344BD /* Constant */,
+				1DB69E082B49CE0A00A344BD /* CustomViews */,
 				1DAE0CD32B3DF7D5008812D5 /* Controller */,
 				1DAE0CD42B3DF801008812D5 /* View */,
 				1DAE0CD82B3DF998008812D5 /* Resorces */,
@@ -97,6 +108,31 @@
 				1DAE0CCD2B3DF351008812D5 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1DB69E082B49CE0A00A344BD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				1DB69E092B49CE6000A344BD /* MenuHeaderCell.swift */,
+				1DB69E0A2B49CE6000A344BD /* MenuHeaderCell.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		1DB69E0D2B49D54800A344BD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1DB69E0E2B49D57000A344BD /* FbMenuViewController+CellType.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		1DB69E102B49D5AD00A344BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DB69E112B49D5C000A344BD /* FbMenuViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAE0CCC2B3DF351008812D5 /* LaunchScreen.storyboard in Resources */,
+				1DB69E0C2B49CE6000A344BD /* MenuHeaderCell.xib in Resources */,
 				1DAE0CC92B3DF351008812D5 /* Assets.xcassets in Resources */,
 				1DAE0CC72B3DF350008812D5 /* Main.storyboard in Resources */,
 			);
@@ -171,8 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAE0CC42B3DF350008812D5 /* FbMenuViewController.swift in Sources */,
+				1DB69E0B2B49CE6000A344BD /* MenuHeaderCell.swift in Sources */,
 				1DAE0CC02B3DF350008812D5 /* AppDelegate.swift in Sources */,
+				1DB69E0F2B49D57000A344BD /* FbMenuViewController+CellType.swift in Sources */,
 				1DAE0CC22B3DF350008812D5 /* SceneDelegate.swift in Sources */,
+				1DB69E122B49D5C000A344BD /* FbMenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,24 +8,40 @@
 import UIKit
 
 class FbMenuViewController: UIViewController {
+    
     @IBOutlet weak var menuTableView: UITableView!
+    var viewModel = FbMenuViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        menuTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        registerCell()
+        viewModel.configureCellTypes()
+    }
+    
+    func registerCell() {
+        menuTableView.register(MenuHeaderCell.nib(), forCellReuseIdentifier: MenuHeaderCell.cellIdentifier)
     }
 
 }
 
 extension FbMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = "\(indexPath.row)"
-        return cell ?? UITableViewCell()
+        
+        let rowType = viewModel.getRowType(indexPath.row)
+        
+        switch rowType {
+        case .menuHeaderCell:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuHeaderCell.cellIdentifier, for: indexPath) as? MenuHeaderCell else {
+                return UITableViewCell()
+            }
+            return cell
+        }
+       
     }
 }
 
